@@ -1,0 +1,4 @@
+GITHUB_TOKEN=github_pat_xxxxxxxxxxxxx
+GITHUB_USERNAME=your-username
+GITHUB_REPO=your-username/thesis-obsidian
+GITHUB_BRANCH=main
