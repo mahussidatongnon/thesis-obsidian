@@ -1,0 +1,20 @@
+- Model
+	- from creation, to usage, to update
+	- nature: inductive, deductive, abductive
+		- meaning:
+	- role: descriptive, predictive, prescriptive
+		- meaning:
+- Example of hybrid models:
+	- PINNS 
+		- creation: hybrid model
+		- usage: inductive
+		- update: hybrid model
+	- gray box
+		- creation: hybrid model
+		- usage: hybrid model
+		- update: hybrid model
+	- hybrid pattern
+		- depend on the nature of deliverable
+			- deliverable: the model that is used at the end
+				- see attern Catalog for more detail
+		- 
