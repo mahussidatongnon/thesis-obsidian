@@ -93,18 +93,11 @@ else
 fi
 
 # ------------------------------
-# Push if there are commits ahead of remote
+# Always push to remote
 # ------------------------------
-# Get the number of commits ahead
-AHEAD=$(git rev-list --count --left-only --count origin/$GITHUB_BRANCH...HEAD)
-
-if [ "$AHEAD" -gt 0 ]; then
-    git pull --rebase origin "$GITHUB_BRANCH" || true
-    git push origin "$GITHUB_BRANCH"
-    echo "Local commits pushed to remote."
-else
-    echo "Nothing to push."
-fi
+git pull --rebase origin "$GITHUB_BRANCH" || true
+git push origin "$GITHUB_BRANCH"
+echo "Local commits pushed to remote (if any)."
 
 # ------------------------------
 # Restore original remote URL and local git config
