@@ -1,7 +1,6 @@
 #!/bin/bash
-
 # ==============================
-# Obsidian Daily Auto Commit
+# Obsidian Daily Auto Commit (robust)
 # ==============================
 
 set -e
@@ -48,25 +47,34 @@ GITHUB_BRANCH=${GITHUB_BRANCH:-main}
 # ------------------------------
 if [ ! -d ".git" ]; then
     echo "Initializing repository..."
-
     git init
     git branch -M "$GITHUB_BRANCH"
-
     git remote add origin "https://github.com/$GITHUB_REPO.git"
 fi
 
 # ------------------------------
-# Git author (automation-safe)
+# Backup current remote and local git config
+# ------------------------------
+ORIGINAL_REMOTE=$(git config --get remote.origin.url || echo "")
+ORIGINAL_NAME=$(git config user.name || echo "")
+ORIGINAL_EMAIL=$(git config user.email || echo "")
+
+# ------------------------------
+# Set automation-safe git config
 # ------------------------------
 git config user.name "Obsidian Auto Commit"
 git config user.email "auto@obsidian.local"
 
 # ------------------------------
-# Authenticated remote (temporary)
+# Setup temporary authenticated remote
 # ------------------------------
 AUTH_REMOTE="https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git"
 
-git remote set-url origin "$AUTH_REMOTE"
+if [ -n "$ORIGINAL_REMOTE" ]; then
+    git remote set-url origin "$AUTH_REMOTE"
+else
+    git remote add origin "$AUTH_REMOTE"
+fi
 
 export GIT_TERMINAL_PROMPT=0
 
@@ -77,7 +85,6 @@ git add -A
 
 if ! git diff --cached --quiet; then
     COMMIT_MSG="Daily auto commit: $(date '+%Y-%m-%d %H:%M')"
-
     git commit -m "$COMMIT_MSG"
 
     git pull --rebase origin "$GITHUB_BRANCH" || true
@@ -89,6 +96,20 @@ else
 fi
 
 # ------------------------------
-# Restore clean remote
+# Restore original remote URL and local git config
 # ------------------------------
-git remote set-url origin "https://github.com/${GITHUB_REPO}.git"
+if [ -n "$ORIGINAL_REMOTE" ]; then
+    git remote set-url origin "$ORIGINAL_REMOTE"
+fi
+
+if [ -n "$ORIGINAL_NAME" ]; then
+    git config user.name "$ORIGINAL_NAME"
+else
+    git config --unset user.name
+fi
+
+if [ -n "$ORIGINAL_EMAIL" ]; then
+    git config user.email "$ORIGINAL_EMAIL"
+else
+    git config --unset user.email
+fi
