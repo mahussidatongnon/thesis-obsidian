@@ -83,16 +83,27 @@ export GIT_TERMINAL_PROMPT=0
 # ------------------------------
 git add -A
 
+# Commit if there are staged changes
 if ! git diff --cached --quiet; then
     COMMIT_MSG="Daily auto commit: $(date '+%Y-%m-%d %H:%M')"
     git commit -m "$COMMIT_MSG"
+    echo "Changes committed locally."
+else
+    echo "No new changes to commit."
+fi
 
+# ------------------------------
+# Push if there are commits ahead of remote
+# ------------------------------
+# Get the number of commits ahead
+AHEAD=$(git rev-list --count --left-only --count origin/$GITHUB_BRANCH...HEAD)
+
+if [ "$AHEAD" -gt 0 ]; then
     git pull --rebase origin "$GITHUB_BRANCH" || true
     git push origin "$GITHUB_BRANCH"
-
-    echo "Auto commit completed."
+    echo "Local commits pushed to remote."
 else
-    echo "No changes to commit."
+    echo "Nothing to push."
 fi
 
 # ------------------------------
