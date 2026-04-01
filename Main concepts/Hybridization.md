@@ -1,9 +1,8 @@
 - Model
 	- from creation, to usage, to update
-	- nature: inductive, deductive, abductive
-		- meaning:
-	- role: descriptive, predictive, prescriptive
-		- meaning:
+	- ![[Model Stage]]
+	- ![[Model Nature]]
+	- ![[Model Role]]
 - Example of hybrid models:
 	- PINNS 
 		- creation: hybrid model
@@ -16,5 +15,7 @@
 	- hybrid pattern
 		- depend on the nature of deliverable
 			- deliverable: the model that is used at the end
-				- see attern Catalog for more detail
-		- 
+				- see pattern Catalog for more detail
+- Analysis
+	- Hybridization process can occurs at the creation stage, usage or update, but a new stage merge. It's design stage
+	- depending on where hybridization occurs, the objectives are not the same
