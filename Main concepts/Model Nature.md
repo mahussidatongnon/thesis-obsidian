@@ -1,1 +1,1 @@
-inductive, deductive, abductive
+inductive, deductive, hybride

@@ -4,9 +4,21 @@ kanban-plugin: board
 
 ---
 
+## Transversal
+
+- [ ] Communication interface between data and models
+- [ ] Principes for model hybridization
+- [ ] Projet EDT-Catalyst
+- [ ] Projet EDT-Compose: DT composition
+- [ ] Projet EDT-3: Evolution du Jumeau numerique
+- [ ] Projet EDT-Synchro...:
+- [ ] Projet EDT-5: Interaction Human Machine
+- [ ] EDT-Conf
+
+
 ## Backlog
 
-- [ ] Test
+- [ ] watch Julien videos
 
 
 ## ToDo
@@ -29,6 +41,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false]}
 ```
 %%

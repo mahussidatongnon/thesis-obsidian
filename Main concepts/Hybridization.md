@@ -1,8 +1,21 @@
+- Context: 
+	- computational models
+	- that can be simulated or interpretated
 - Model
 	- from creation, to usage, to update
 	- ![[Model Stage]]
 	- ![[Model Nature]]
 	- ![[Model Role]]
+	- MCnW (Model Characterisstic no Well Defined)
+		- 1:
+			- design
+			- manufacturing
+			- maintenance
+			- utilization
+		- 2: Objectived of the hybridization
+			- build an atomique model with specific properties (more fidelity, generality, rapidity)
+				-ex: inductive, deductive
+			- combine 2 or more models (called hybrid model)
 - Example of hybrid models:
 	- PINNS 
 		- creation: hybrid model
