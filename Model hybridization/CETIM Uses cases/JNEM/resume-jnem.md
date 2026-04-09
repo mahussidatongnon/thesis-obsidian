@@ -1,0 +1,6 @@
+- Pattern Catalog DSL can be augmented to express engineering choices
+	- case of parameters update following divergence detection
+		- choice 1: return parameters with a booleen with expresse if i's a new one or the old, the connect to the model used in production by configuration pattern
+		- choice 2: return the new parameter or old, then add Decision trigger with determine if it's a new one. Finally joint the choice by connected to configuration pattern :
+			- reminder choice 1 is the generate from choice 2
+		- choice3: ....

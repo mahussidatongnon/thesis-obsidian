@@ -1,0 +1,171 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Examplar 1},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Examplar 1}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Abstract 1:}\label{abstract-1}
+
+Models derived from physical laws (deductive models) and those obtained
+from experimental observations and operational data (inductive) are
+widely used in mechanical engineering to support operational
+optimisation and structural integrity assessment. However, Digital Twins
+are still commonly described as either physics-based or data-driven
+systems, masking the hybrid nature that progressively emerges during
+their development, deployment, and evolution. Although hybrid modeling
+is frequently implemented in practice, it remains insufficiently
+characterized, preventing engineers from intentionally designing hybrid
+Digital Twins.
+
+This paper analyzes two mechanical engineering applications---a fluidic
+loop optimized through predictive operation and a pressure vessel
+Digital Twin dedicated to lifetime estimation---to investigate how
+hybridization appears during model creation, operational usage, and
+model updating stages. The study identifies when and why hybridization
+occurs across Digital Twin engineering activities.
+
+Results show that hybridization systematically emerges regardless of the
+initial modeling paradigm(building inductives or deductive models).
+\st{The interaction between deductive and inductive models enables
+adaptive prediction capabilities and continuity across lifecycle
+phases.}
+
+Recognizing Digital Twins as intrinsically hybrid systems provides a
+framework for more resilient and lifecycle-oriented engineering
+processes. Hybrid modeling should therefore be considered a foundational
+principle rather than an optional enhancement, enabling transferable
+methodologies for future Digital Twin developments.
+
+\subsubsection{1. Introduction}\label{introduction}
+
+\begin{itemize}
+\tightlist
+\item
+  DT definition in mechanical engineering
+\item
+  Physics vs data-driven dichotomy
+\item
+  Research gap: lack of explicit hybrid characterization
+\item
+  Contributions of the paper
+\end{itemize}
+
+\subsubsection{2. Hybridization in DT within Engineering Approach and
+Case
+Studies}\label{hybridization-in-dt-within-engineering-approach-and-case-studies}
+
+\begin{itemize}
+\tightlist
+\item
+  Definitions:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Model
+  \item
+    Model nature
+  \item
+    Hybridization process
+  \item
+    Model lifecycle
+  \end{itemize}
+\item
+  Fluidic loop DT
+
+  \begin{itemize}
+  \tightlist
+  \item
+    objective
+  \item
+    DT construction (models creation, verification, validation)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Hybridization process witin models lifecycle
+    \end{itemize}
+  \end{itemize}
+\item
+  Pressure vessel DT
+
+  \begin{itemize}
+  \tightlist
+  \item
+    lifetime estimation strategy
+  \item
+    DT constructions (models creation, verification, validation)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Hybridization process witin models lifecycle
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{3. Comparative analysis between both
+cases}\label{comparative-analysis-between-both-cases}
+
+\subsubsection{4. Lessons Learned \&
+Transferability}\label{lessons-learned-transferability}
+
+\subsubsection{5. Conclusion}\label{conclusion}
+
+\end{document}

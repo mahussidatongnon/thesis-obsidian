@@ -4,8 +4,8 @@
 - Model
 	- from creation, to usage, to update
 	- ![[Model Stage]]
-	- ![[Model Nature]]
-	- ![[Model Role]]
+	- [[Model Nature]]
+	- [[Model Role]]
 	- MCnW (Model Characterisstic no Well Defined)
 		- 1:
 			- design
@@ -32,3 +32,5 @@
 - Analysis
 	- Hybridization process can occurs at the creation stage, usage or update, but a new stage merge. It's design stage
 	- depending on where hybridization occurs, the objectives are not the same
+- Conclusions:
+	- ![[resume-jnem]]
