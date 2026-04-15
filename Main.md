@@ -19,6 +19,7 @@ kanban-plugin: board
 ## Backlog
 
 - [ ] watch Julien videos
+- [ ] Model Characteritics (that is usefull for hybridization process). Inspiration can come from the DT CHaracteristics
 
 
 ## ToDo
