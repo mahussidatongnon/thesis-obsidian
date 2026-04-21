@@ -15,7 +15,7 @@ Jumeau Numérique pour les Equipements Fluidiques (Fluidic Loop)
 	- At each of the operating points, one or more values of the component vector are increased or reduced from the nominal point
 	- the measured process vector is recorded as well as the index, n, of the changed parameter(s).
 	- a ML algorithm (Decision Tree) is then learned to estimated the changed indexes 
-	- Explanation: Vector control space are samples. For each combination, one or more parameter(s) of nominal parameters are increased or decreased, then we obtain a new parameters vector (vector components) which is used to simulate the vector process
+	- Explanation: Vector control (u) space are samples. For each combination, one or more parameter(s) of nominal parameters (theta) are increased or decreased, then we obtain a new parameters vector (vector component: theta_n) which is used to simulate the vector process (y) with 1D sim
 	- ML
 		- input = (u, y)
 			- y = "1D sim"(u, theta_n)
@@ -25,6 +25,10 @@ Jumeau Numérique pour les Equipements Fluidiques (Fluidic Loop)
 			- y: a vector process
 			- n: vector indexes of changed element in vector components
 			- The localisation model is fxed
+			- theta considered:
+				- Head loss of piping section 2 "Loss2"
+				- Head loss of piping section 1 "Loss3"
+				- Tank pressure "P_Tank" 
 		- Hybridization
 			- Usage of "1D sim" to obtained y used to build the database
 				- Why to used "1D sim" instead of physical object
@@ -32,7 +36,7 @@ Jumeau Numérique pour les Equipements Fluidiques (Fluidic Loop)
 					- get a database faster than from the original
 				- What is drawbacks of using "1D sim" to to build the database 
 					- "1D sim" have a certain uncertainly
-					- 
+
 - Fault estimation
 	- LS-SVR
 	- this database is only generated immediately after the localization step is completed.

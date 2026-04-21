@@ -1,0 +1,9 @@
+- how cavitation are really detected
+	- is is by the output of model followed by a spefic calutation. Can we gwt thw algorithm
+	- is it by finding a default beteween the estimation of physical equipment and "1d Sim" ?
+- Parameters used in the contexte of Inductive "Fault localisation" are: 
+	- Parameters
+		- Head loss of piping section 2 "Loss2"
+		- Head loss of piping section 1 "Loss3"
+		- Tank pressure "P_Tank" 
+	- some of them can lead to cavitation detection

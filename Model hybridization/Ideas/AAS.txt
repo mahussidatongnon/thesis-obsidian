@@ -1,0 +1,29 @@
+HybridModelSubmodel
+├─ ModelList
+│   ├─ PhysicsModel (ID, FMI reference)
+│   ├─ MLModel (ID, version, training domain)
+│   ├─ ReducedModel
+│
+├─ ValidityDomains
+│   ├─ PhysicsModel: Re < 10⁵
+│   ├─ MLModel: historical operating envelope
+│
+├─ FusionStrategy
+│   ├─ Switching
+│   ├─ Blending
+│   ├─ Confidence-weighted
+│
+├─ InputMapping
+│   ├─ pressure → PhysicsModel.p_in
+│   ├─ vibration → MLModel.sensor_3
+│
+├─ OutputMapping
+│   ├─ head_loss = weighted_sum(...)
+│
+├─ ConfidenceMetrics
+│   ├─ uncertainty
+│   ├─ residual error
+│
+├─ ExecutionContext
+│   ├─ Real-time / Batch
+│   ├─ Edge / Cloud

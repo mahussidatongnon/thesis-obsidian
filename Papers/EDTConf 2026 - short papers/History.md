@@ -1,0 +1,16 @@
+- Needed
+	- a predictive maintenance of the fuidic loop compoenent such as sections 2 & 3 of the loop, tank default
+	- potentially build other scenario of fluidic loop
+	- be able to control the 
+- So 
+	- The digital twin is one the solution
+		- It then mus reflet the actual state of the physical loop
+			- Inial State: Obtain by designing, creating and calibrating the "1D sim" (deductive model) model
+- Why do we need hybridization
+	- As said previously, DT must reflet the actual stated of the physical twin even, meaning represent the natural usure of the component specified in Needed point. So it needs to b e recalibrate at runtime 
+		- It is hard to do recalibration as it was done in the initial calibration 
+			- What it meean hard ????
+				- what do want to avoid
+				- what are the other consequences (advantage of drawbacks)
+		- So we use inductive model to proceed, the hybridization process occurs
+		-

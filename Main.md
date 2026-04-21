@@ -24,6 +24,8 @@ kanban-plugin: board
 
 ## ToDo
 
+- [ ] Send Hybridization caracteristics to Julien
+- [ ] Send DT Characteristics to Julien
 
 
 ## In Progress
