@@ -1,0 +1,1 @@
+Intent vs Problem Statement: I always specify the Intent before the concept solution

@@ -30,3 +30,38 @@ Case to be used in paper:
 	- Recognizing Digital Twins is nowadays as intrinsically hybrid systems provides a framework for designing more resilient and lifecycle-oriented DT engineering processes.
 	- proposes that hybrid modeling should not be treated as an optional enhancement but as a foundational engineering principle for Digital Twins
 		- then characterizing hybrid models becomes a key lever for transferable DT development methodologies.
+
+# Other
+ % Context
+	First-principles based model (deductive models) and those obtained
+	from experimental observations and operational data (inductive) are
+	widely used in mechanical engineering to support operational
+	optimization and structural integrity assessment. 
+
+% Problem
+	However, Digital Twins are still commonly described as either physics-based or data-driven
+	systems, masking the hybrid nature that progressively emerges during
+	their development, deployment, and evolution. 
+	Although hybrid modeling
+	is frequently implemented in practice, it remains insufficiently
+	characterized, preventing engineers from intentionally designing hybrid
+	Digital Twins.
+
+% Approach
+	This paper analyzes two mechanical engineering applications a fluidic
+	loop optimized through predictive operation and a pressure vessel
+	Digital Twin dedicated to lifetime estimation to investigate how
+	hybridization appears during model creation, operational usage, and
+	model updating stages. The study identifies when and why hybridization
+	occurs across Digital Twin engineering activities.
+
+% Result
+	Results show that hybridization systematically emerges regardless of the
+	initial modeling paradigm(creating or using inductives or deductives models).
+
+% Conclusion
+	Recognizing Digital Twins as intrinsically hybrid systems can provides a
+	framework for more resilient and lifecycle oriented engineering
+	processes. Hybrid modeling should therefore be considered a foundational
+	principle rather than an optional enhancement, enabling transferable
+	methodologies for future Digital Twin developments.

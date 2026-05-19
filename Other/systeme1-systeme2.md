@@ -1,0 +1,2 @@
+- une usage intensif de l'IA pourrait mener a un model de fonctionnement guider par le systeme 1 de Daniel Kahneman
+- 
