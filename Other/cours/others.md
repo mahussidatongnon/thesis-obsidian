@@ -1,0 +1,2 @@
+- [First FINALITY Summer School, 8-11 Sept 2026](https://project.inria.fr/finality1stphdschool/ "First FINALITY Summer School,  8-11 Sept 2026")
+- 

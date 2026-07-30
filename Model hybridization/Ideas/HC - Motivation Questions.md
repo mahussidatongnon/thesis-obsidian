@@ -1,0 +1,18 @@
+- P1
+		- HC2: 
+			- problem expressed
+		- HC3: 
+			- Existing assets & gaps: one of the existing assets are the deliverable of one of hybridization describe through one of the problem of HC2
+		- Question:
+			- should HC3 came before HC2, 
+		- Solutions
+			- This case must be addressed in different ways
+				- If main problem is recalibration due to discrepancy between the physical entity and the digital twin, then one of the solution is tohave a model for corrrecting the parameters
+					- This solution leads to 3 different problem
+						- identify parameter
+						- estimate new parameter value, 
+						- valide the new value
+- P2
+	- Hybridization Characteristics in motivation dimension if it doesn't always motivate hybrization of models, mays be should be transversal for describing a poblem;
+		- then a new question is; in enginering how the problem are describing
+		- what motivation bring in terms of values

@@ -1,0 +1,7 @@
+- Base de donnee
+	- Elisabetta De Maria <elisabetta.de-maria@univ-cotedazur.fr>
+	- 1 groupe de TD 
+	- les horraire de l'année derniere
+- IP1
+	- Denis Dubruel <Denis.DUBRUEL@univ-cotedazur.fr>
+	- 2 groupe de TP 

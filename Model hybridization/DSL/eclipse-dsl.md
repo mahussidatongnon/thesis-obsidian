@@ -1,0 +1,11 @@
+- https://github.com/ObeoNetwork/Sirius-Web-Tutorial/blob/main/sirius-web-tutorial-eclipsecon2023.adoc
+- https://eclipse.dev/sirius/
+- https://eclipse.dev/sirius/sirius-web.html
+
+- Ressources:
+	- Models portauto-construction:
+		- FMU API ref
+		- Joblib
+		- Onnx API ref
+	- Descartes bulder: creation de model
+		- application au models inductives 

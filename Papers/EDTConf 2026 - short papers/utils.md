@@ -1,0 +1,4 @@
+- https://www.acm.org/publications/proceedings-template
+- https://www.acm.org/publications/taps/whitelist-of-latex-packages
+- [https://hal.science/hal-05559524v1](https://hal.science/hal-05559524v1)
+- https://conf.researchr.org/track/edtconf-2026/edtconf-2026-industrial-talks

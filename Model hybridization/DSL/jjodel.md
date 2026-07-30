@@ -1,0 +1,15 @@
+- Link
+	- linki between storage port and trainer port
+	- from archi input to other inputs, from output to archi output, else , output to input
+- Parameter identifier:
+	- first
+		- on genere la base de donnée avec les parametre nominaux
+			- ARTEFACT 1:  on ontient une base de donnée qui couvre l'espace de generation:
+		- Sur base de cet artefact on genere une nouvele de base de pour l'apprentissage: 
+			- ARTEFACT 2: on obtien ainsi la se de donné de l'apprentissage
+		- On entraine:
+			- ARTEFACT 3: on obtient un model d'identification de parametre
+	- each time:
+		- same ARTEFACT 1
+		- ARTEFACT 2: sur la base de cetaines conditions on utilise tout ou une partie de la base de donnée d'entrainement
+		- ARTEFACT 3: on obtient un nouvel artefac t

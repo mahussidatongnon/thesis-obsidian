@@ -1,0 +1,925 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Content v1},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Content v1}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+\item
+  \textbf{Introduction}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Digital Twin definitions → (e.g., Grieves, Tao, Kritzinger\ldots)
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \begin{itemize}
+      \tightlist
+      \item
+        DTs in industrial engineering: why they matter (decision
+        support, monitoring, design, troubleshooting).
+      \end{itemize}
+    \end{itemize}
+  \item
+    Why hybridization is common and beneficial (physics gives structure;
+    data gives adaptation).
+  \item
+    The gap: ad hoc hybridization + weak documentation → poor
+    transferability.
+  \item
+    \textbf{Contributions (explicit list, 3--5 bullets):}
+
+    \begin{enumerate}
+    \tightlist
+    \item
+      Engineering report of CETIM fluidic-loop DT development
+    \item
+      DT characterization using Bentley et al.
+    \item
+      Complementary hybridization perspective (2 dimensions) applied to
+      the case
+    \item
+      Transferable lessons learned + supplementary material
+    \end{enumerate}
+  \end{itemize}
+\item
+  Backgrownd \& terminology
+
+  \begin{itemize}
+  \item
+    Industrial systems are commonly modeled to support prediction,
+    optimization, and what‑if analysis under operational constraints.
+    Two broad families of modeling approaches dominate the engineering
+    literature and practice: \textbf{deductive
+    (physics‑based/knowledge‑based) models}, which derive system
+    behavior from first principles, and \textbf{inductive (data‑driven)
+    models}, which infer system behavior from observed data.
+    Increasingly, industrial digitalization has motivated the
+    \textbf{hybridization} of these approaches to exploit complementary
+    strengths, interpretability and extrapolation for deductive models,
+    and flexibility and computational efficiency for inductive models.
+  \item
+    Model Nature
+
+    \begin{itemize}
+    \item
+      Deductive (knowledge‑based, physics‑based) engineering models
+
+      \begin{itemize}
+      \tightlist
+      \item
+        A \textbf{deductive model} represents a process by explicitly
+        encoding domain knowledge such as conservation laws,
+        constitutive relations, and mechanistic assumptions. The model
+        structure is typically specified \emph{a priori} based on
+        physics and engineering principles, and simulation proceeds by
+        solving the resulting algebraic/differential equations. In
+        industrial contexts, deductive models are widely used for:
+      \item
+        \textbf{Prediction and forecasting} under changes in inputs or
+        operating conditions,
+      \item
+        \textbf{what‑if analysis}, and
+      \item
+        \textbf{Process description and understanding}, by linking
+        outputs to interpretable physical mechanisms.
+      \end{itemize}
+    \item ~
+      \paragraph{Inductive (data‑driven) engineering
+      models}\label{inductive-datadriven-engineering-models}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        An \textbf{inductive model} (often referred to as
+        \textbf{data‑driven} or \textbf{machine‑learning} model)
+        represents a process by learning an input--output relationship
+        from data. Instead of specifying governing equations, the model
+        parameters, and sometimes the functional form, are estimated
+        from historical measurements, experiments, or high‑fidelity
+        simulations. Inductive models are frequently adopted when:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          The underlying physics is partially unknown, too complex, or
+          costly to implement mechanistically,
+        \item
+          Large volumes of process data are available, and/or
+        \item
+          Real‑time computation is required (e.g., monitoring, control,
+          anomaly detection).
+        \end{itemize}
+      \end{itemize}
+
+      Inductive models can approximate complex nonlinear behaviors
+      efficiently, but their reliability depends strongly on data
+      coverage, noise characteristics, and distribution shifts.
+    \end{itemize}
+  \item
+    Hybridization
+
+    \begin{itemize}
+    \item
+      In industrial practice, the modeling pipeline has historically
+      relied on deductive models for simulation and decision support.
+      However, deductive and inductive approaches provide complementary
+      capabilities. \textbf{Hybridization} broadly denotes any
+      systematic strategy that \textbf{combines deductive and inductive
+      components} within a single modeling workflow to improve qualities
+      such as accuracy, robustness, computational efficiency, or
+      interpretability.
+    \item
+    \item
+      Hybridization at usage (run‑time): coupling deductive and
+      inductive models
+
+      \begin{itemize}
+      \tightlist
+      \item
+        When multiple deductive simulators are executed together, each
+        representing a subsystem, and are numerically coordinated to
+        exchange variables during execution, the approach is typically
+        described as \textbf{co‑simulation} (EX1). Co‑simulation thus
+        refers to \emph{multi‑model} integration where each
+        participating model remains explicit and mechanistic. A closely
+        related, but distinct, case arises when \textbf{deductive and
+        inductive models are executed jointly at run‑time}. In this
+        setting, a physics‑based simulator and a learned model exchange
+        information during execution, for example:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          {[}Example 1 of hyrbidization at runtime{]}
+        \item
+          {[}Example 2 of hyrbidization at runtime{]}\\
+          When the operational output is produced by \textbf{combining
+          contributions from both deductive and inductive models during
+          deployment}, this constitutes \textbf{hybridization at usage}
+          (EX1). The defining feature is that \emph{both} model types
+          are present and active in the deployed system, and the final
+          prediction depends on their coordinated execution.\\
+          To make the concept operational, it is useful to distinguish
+          hybridization by \emph{when} and \emph{how} the integration
+          occurs: \textbf{hybridization at usage (run‑time integration)}
+          versus \textbf{hybridization at creation (design‑time
+          integration)}.
+        \end{itemize}
+      \end{itemize}
+    \item
+      Hybridization at creation (design‑time): physics‑informed training
+      and surrogate modeling
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Hybridization can also occur during \emph{model construction},
+        even if only one model type is used at deployment. A prominent
+        example is \textbf{surrogate modeling}, where a deductive
+        (physics‑based) model is used to generate training data for an
+        inductive model that emulates the simulator's input, output
+        behavior. In this case:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          A deductive model is executed offline across a range of
+          operating conditions to produce synthetic data,
+        \item
+          An inductive model is trained on this data to approximate the
+          simulator, and
+        \item
+          At deployment, the \textbf{surrogate} (inductive model) may
+          replace the original deductive model entirely.
+        \end{itemize}
+      \end{itemize}
+
+      Although the deductive model may no longer be executed at usage
+      time, its \textbf{structural assumptions and implied physical
+      relationships are transferred} into the learned surrogate through
+      the training dataset and learning objective {[}ref{]}. This
+      constitutes \textbf{hybridization at creation}, because the
+      integration occurs during the development phase rather than during
+      run‑time operation.
+    \end{itemize}
+  \end{itemize}
+\item
+  Fluidic loop case study\\
+  The physical twin considered in this work is a hydraulic loop equipped
+  with three actuators: (i) pump rotational speed, (ii) opening of a
+  regulation valve, and (iii) activation of a cooling on/off valve.
+  These actuators enable the regulation of \textbf{pressure, flow rate,
+  and temperature} within the loop. The system is instrumented with
+  multiple sensors (e.g., pressures at key locations, pump speed, and
+  process temperature) to ensure observability of the operating state.
+
+  The digital twin (DT) of this fluidic loop is described following the
+  characterization framework proposed by Bentley \emph{et al.}, which
+  structures DTs across \textbf{requirements, realization, deployment,
+  and operation} phases. This framework is selected because it provides
+  a formalized and comprehensive description of DT systems, capturing
+  both their architectural components and operational roles.
+
+  \begin{itemize}
+  \item
+    DT characterization
+
+    \begin{itemize}
+    \item
+      Requirements, Conceptualization, and Design
+
+      \begin{itemize}
+      \tightlist
+      \item
+        System under study and physical components\\
+        The system under study is the fluidic loop itself (MC1),
+        composed of physical actuators (MC2) and sensing components
+        (MC3). The actuators include the regulation valve and the
+        cooling unit, while the sensing layer captures variables such as
+        inlet/outlet pressures, pump speed, and temperature.
+      \item
+        Physical - virtual interactions\\
+        Sensor data are continuously collected and transmitted to the
+        digital environment through a data infrastructure (data lake),
+        forming the \textbf{physical-to-virtual interface} (MC4).
+        Conversely, the \textbf{virtual-to-physical interaction} (MC5)
+        enables the DT to influence the physical system through actuator
+        commands, such as adjusting valve opening or managing cooling
+        strategies.
+      \item
+        Digital twin services
+      \end{itemize}
+    \item
+      Digital twin services\\
+      The DT provides several operational services (MC6), including:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Cavitation detection,
+      \item
+        \textbf{Virtual sensing}, where flow rate can be estimated in
+        case of sensor failure,
+      \item
+        \textbf{Energy consumption analysis}, through simulation of
+        alternative cooling strategies,
+      \item
+        \textbf{Divergence detection}, identifying discrepancies between
+        the physical and virtual systems to trigger recalibration.
+      \end{itemize}
+    \item
+      Realization\\
+      The realization of the digital twin (DT) for the fluidic loop
+      relies on the integration of heterogeneous models, data pipelines,
+      and computational enablers, orchestrated to support the different
+      operational services. This section details the DT realization
+      according to models and data, enabling technologies, system
+      orchestration, lifecycle evolution, and fidelity considerations.
+
+      \begin{itemize}
+      \item
+        Digital Twin Models and Data (MC10)\\
+        The DT is composed of both \textbf{deductive (physics-based)}
+        and \textbf{inductive (data-driven)} models, forming a hybrid
+        modeling architecture.
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Physics-based models:}\\
+          A 1D thermo-hydraulic simulation model (Simcenter Flomaster)
+          is used to represent the fluidic loop. Two variants are
+          employed:
+
+          \begin{itemize}
+          \tightlist
+          \item
+            (i) a simplified hydraulic model, and
+          \item
+            (ii) a more detailed model incorporating head losses and
+            thermal effects.\\
+            These models simulate system variables (e.g., pressure, flow
+            rate, temperature) based on component parameters and control
+            inputs.
+          \end{itemize}
+        \item
+          \textbf{Data-driven models:}\\
+          Two inductive models complement the simulation:
+
+          \begin{itemize}
+          \tightlist
+          \item
+            A \textbf{fault localization model} (decision tree),
+            identifying which parameters of the physical model are
+            responsible for observed discrepancies.
+          \item
+            A \textbf{fault estimation model} (LS‑SVR), estimating the
+            corrected values of these parameters.
+          \end{itemize}
+        \item
+          \textbf{Data structure:}\\
+          The DT relies on a \textbf{data lake} that stores sensor
+          measurements and simulation data. Training datasets for the ML
+          models are generated using a combination of:
+
+          \begin{itemize}
+          \tightlist
+          \item
+            sampled control vectors (e.g., valve opening, pump speed),
+          \item
+            perturbed parameter sets of the simulation model (loss
+            pressur in certain pipes),
+          \item
+            corresponding simulated process variables.
+          \end{itemize}
+        \end{itemize}
+      \item
+        Tooling and Enablers (MC11)\\
+        The DT implementation is supported by a distributed ecosystem of
+        industrial and cloud-based tools:
+
+        \begin{itemize}
+        \item
+          \textbf{Industrial layer:}
+
+          \begin{itemize}
+          \tightlist
+          \item
+            Beckhoff PLC (automation and control),
+          \item
+            Industrial PC for local computation.
+          \end{itemize}
+        \item
+          \textbf{Interoperability and simulation:}
+
+          \begin{itemize}
+          \tightlist
+          \item
+            FMPy library for executing Functional Mock-up Units (FMU),
+          \item
+            Model registry for managing simulation assets.
+          \end{itemize}
+        \item
+          \textbf{Cloud infrastructure:}
+
+          \begin{itemize}
+          \tightlist
+          \item
+            Azure IoT Hub and Event Hub for data ingestion and
+            streaming,
+          \item
+            Azure Functions for event-driven computation,
+          \item
+            Data Lake for storage,
+          \item
+            OPC UA server for communication.
+          \end{itemize}
+        \item
+          \textbf{Application layer:}
+
+          Web application interface for visualization and interaction.\\
+          These enablers collectively ensure data acquisition, model
+          execution, orchestration, and user interaction.
+        \end{itemize}
+      \item
+        Digital Twin Constellation (MC12)
+
+        The DT constellation describes how models, data, and services
+        are orchestrated within the virtual environment.\\
+        The architecture follows a \textbf{service-oriented
+        organization}, in which each DT service (e.g., cavitation
+        detection, virtual sensing, energy analysis, fault detection)
+        relies on a specific combination of:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          simulation models (FMU-based),
+        \item
+          machine learning components,
+        \item
+          real-time and historical data.\\
+          The orchestration is event-driven:
+        \item
+          sensor data streams are ingested into the data infrastructure,
+        \item
+          services are triggered either on-demand or periodically,
+        \item
+          outputs are fed back either to operators (decision support) or
+          to actuators.
+        \end{itemize}
+      \item
+        Twinning Process and Digital Twin Evolution (MC13)\\
+        The DT evolves over time to improve accuracy and operational
+        capabilities.
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Model evolution:}\\
+          The simulation model progresses from a purely hydraulic
+          representation to a \textbf{thermo-hydraulic model},
+          increasing fidelity.
+        \item
+          \textbf{Learning strategy evolution:}\\
+          The initial approach relies on generating dedicated datasets
+          and training models per use case. This process is expected to
+          evolve toward more advanced strategies, such as
+          \textbf{continual learning}, enabling adaptation without full
+          retraining.
+        \item
+          \textbf{Operational adaptation:}\\
+          The DT incorporates mechanisms such as divergence detection,
+          which trigger recalibration or parameter updates during
+          operation.
+        \end{itemize}
+      \item
+        Fidelity and Validity Considerations (MC14)\\
+        The fidelity of the DT depends on the accuracy of both
+        simulation and data-driven components, as well as their
+        interaction.\\
+        Key aspects include:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Parameter representation:}\\
+          The DT relies on a set of parameters exchanged between the
+          physical and virtual systems. Their accuracy, level of
+          abstraction, and uncertainty directly influence model
+          validity.
+        \item
+          \textbf{Impact of hybridization:}\\
+          Machine learning models (fault localization and estimation)
+          influence DT fidelity by dynamically updating simulation
+          parameters. While this improves adaptability, it introduces
+          potential uncertainties related to model generalization and
+          data quality.
+        \item
+          \textbf{Validation mechanisms:}\\
+          Ensuring fidelity requires:
+
+          \begin{itemize}
+          \tightlist
+          \item
+            validation of updated parameters against observed data,
+          \item
+            monitoring divergence between DT and physical twin,
+          \end{itemize}
+        \end{itemize}
+
+        Overall, fidelity is not static but emerges from the
+        \textbf{continuous interaction between physics-based models,
+        data-driven models, and real-world observations}. The
+        interaction between these models illustrates a hybrid
+        architecture, where physics-based simulation is augmented by
+        data-driven inference mechanisms.
+      \end{itemize}
+    \item
+      Deployment\\
+      The deployment of the digital twin (DT) for the fluidic loop is
+      based on a \textbf{distributed edge--cloud architecture}, ensuring
+      reliable communication between the physical system, computational
+      components, and user interfaces. This architecture supports
+      real-time data acquisition, model execution, and bidirectional
+      interaction with the physical twin.
+
+      \begin{itemize}
+      \item
+        Digital Twin Technical Connection (MC15)\\
+        The DT deployment relies on a multi-layer communication
+        infrastructure structured along three main segments:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          Factory-to-Edge Layer\\
+          At the physical level, sensors and actuators are connected to
+          an \textbf{industrial controller (Beckhoff PLC)}, which serves
+          as the primary interface with the physical system. This
+          controller aggregates sensor measurements (e.g., pressures,
+          temperatures, pump speed) and transmits them through an
+          industrial communication stack.\\
+          Communication between the factory and the edge is ensured
+          through:
+
+          \begin{itemize}
+          \tightlist
+          \item
+            \textbf{OPC UA protocols}, enabling standardized industrial
+            data exchange,
+          \item
+            \textbf{MQTT-based connectors}, facilitating efficient data
+            transmission toward cloud services.
+          \end{itemize}
+        \item
+          Edge-to-Cloud Layer\\
+          The edge layer communicates with the cloud infrastructure to
+          enable scalable data processing and storage. This connection
+          is implemented using:
+
+          \begin{itemize}
+          \tightlist
+          \item
+            \textbf{Azure IoT Operations}, acting as a gateway for
+            device management and data ingestion,
+          \item
+            \textbf{Azure Event Hub}, supporting high-throughput
+            streaming of telemetry data,
+          \item
+            Secure communication channels based on \textbf{VPN, firewall
+            configurations, and identity management (Azure Active
+            Directory)}.\\
+            This layer ensures the reliable transfer of both real-time
+            and historical data to the cloud environment, where most DT
+            services are executed.
+          \end{itemize}
+        \item
+          Cloud-to-Edge Layer\\
+          The DT also supports feedback from the virtual environment to
+          the physical system. A .NET containerized application,
+          deployed on a Kubernetes cluster at the edge (via Azure Arc),
+          interacts with cloud APIs to retrieve computed results .\\
+          These outputs are transmitted back to the industrial
+          controller using the \textbf{TwinCAT ADS communication
+          library}, enabling the Beckhoff PLC to actuate system
+          components accordingly.
+        \end{itemize}
+      \item
+        Digital Twin Hosting and Deployment (MC16)\\
+        The DT is hosted across a \textbf{hybrid infrastructure},
+        combining edge and cloud resources:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Edge computing layer:}
+
+          \begin{itemize}
+          \tightlist
+          \item
+            Industrial PC for local execution and low-latency
+            operations,
+          \item
+            Kubernetes cluster for containerized services,
+          \item
+            Real-time interaction with the physical system.
+          \end{itemize}
+        \item
+          \textbf{Cloud computing layer:}
+
+          \begin{itemize}
+          \tightlist
+          \item
+            Azure-based services for scalable data processing,
+          \item
+            Data Lake for persistent storage,
+          \item
+            Event-driven computation (Azure Functions),
+          \item
+            Model management (FMU registry).
+          \end{itemize}
+        \item
+          \textbf{Application layer:}\\
+          Web-based interface for visualization, monitoring, and user
+          interaction.
+        \end{itemize}
+      \end{itemize}
+    \item
+      Operation\\
+      The operation phase of the digital twin (DT) describes how the
+      system delivers value in real-time through continuous interaction
+      with the physical twin, data processing, and decision support. It
+      focuses on \textbf{service execution, synchronization mechanisms,
+      and operational insights} derived from the DT.
+
+      \begin{itemize}
+      \tightlist
+      \item
+        Insights and Decision-Making (MC17)\\
+        At the operational level, the DT provides several value-added
+        services supporting monitoring, diagnosis, and optimization of
+        the fluidic loop:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Cavitation detection:}\\
+          The DT evaluates operating conditions to detect cavitation
+          risks within the hydraulic system using the simulation model.
+        \item
+          \textbf{Virtual sensing:}\\
+          In case of sensor failure (e.g., flow rate sensor), the DT
+          estimates missing variables using the simulation model,
+          ensuring continuity of monitoring.
+        \item
+          \textbf{Energy consumption analysis:}\\
+          The DT simulates different cooling strategies (e.g., fast,
+          medium, slow cooling scenarios) and evaluates their energy
+          impact, enabling informed operational decisions.
+        \item
+          \textbf{Divergence detection:}\\
+          The DT continuously compares simulated outputs with real
+          measurements to identify discrepancies. When divergence is
+          detected, it triggers recalibration or parameter update
+          processes.\\
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \item
+    Hybridization perspective\\
+    To ensure consistency with the digital twin (DT) description, the
+    \textbf{hybridization characteristics (HC)} are introduced by
+    establishing a direct correspondence with the \textbf{Bentley
+    \emph{et al.} framework}. While Bentley et al. structure a DT along
+    its lifecycle dimensions (requirements, realization, deployment,
+    operation), the hybridization characteristics refine this
+    description by \textbf{focusing specifically on how deductive and
+    inductive models are combined}, why this combination is needed, and
+    how it evolves within the DT. n this perspective, hybridization is
+    not treated as an isolated concept but as a \textbf{cross-cutting
+    concern} embedded within the DT characteristic. HC is structured
+    along two complementary dimensions: \textbf{Motivation} and
+    \textbf{Realization}. This decomposition is consistent with Bentley
+    \emph{et al.}, where motivation aligns with \textbf{requirements,
+    conceptualization, and design (MC1--MC6)}, while realization relates
+    to \textbf{implementation and operation aspects (MC10--MC14, MC7,
+    MC17)}.
+
+    \begin{itemize}
+    \item
+      Motivation Dimension\\
+      The motivation dimension captures \textbf{why hybridization is
+      introduced}, independently of its implementation. It formalizes
+      the problem context, the limitations of existing DT assets, and
+      the expected capabilities of the hybridized system.
+
+      \begin{itemize}
+      \item
+        Overview / Context\\
+        (Link to MC1: System under study, MC6: DT services, MC10:
+        Models). The considered DT is based on a \textbf{1D
+        thermo-hydraulic simulation model} used to support multiple
+        operational services, including flow simulation, cavitation
+        detection, and energy analysis.\\
+        This simulation model constitutes the \textbf{core deductive
+        component} of the DT. However, the increasing demand for
+        adaptive and reliable services (MC6) highlights the need to
+        extend this model beyond its original static capabilities.
+        Hybridization is introduced in this context as a mechanism to
+        \textbf{augment the DT with adaptive capabilities while
+        preserving the existing simulation-based structure}.
+      \item
+        Problem Statement\\
+        (Link to MC6: Services, MC14: Fidelity and validity)\\
+        The DT faces a fundamental limitation:\\
+        the \textbf{simulation model is calibrated only once during the
+        creation phase}, and its parameters remain fixed during
+        operation.\\
+        As a consequence:
+
+        \begin{itemize}
+        \item
+          the DT cannot account for \textbf{system evolution,
+          degradation, or unforeseen operating conditions},
+        \item
+          discrepancies arise between simulated outputs and real
+          measurements,
+        \item
+          the \textbf{reliability of DT services (MC6)} is degraded,
+        \item
+          the \textbf{fidelity of the DT (MC14)} decreases over time.
+
+          The core problem can therefore be stated as follows:
+
+          \begin{quote}
+          \emph{How can the DT maintain alignment with the physical
+          system despite evolving conditions, without requiring repeated
+          manual recalibration?}
+          \end{quote}
+        \end{itemize}
+      \item
+        Existing Twin Assets and Gaps\\
+        \emph{(Link to MC10: Models and data, MC14: Fidelity)}\\
+        The DT already includes:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          a \textbf{physics-based simulation model},
+        \item
+          a \textbf{data infrastructure} (sensor streams, data lake),
+        \item
+          an initial \textbf{parameter calibration}.\\
+          However, the following gaps are identified:
+        \item
+          \textbf{Static parameterization:} no mechanism for runtime
+          adaptation,
+        \item
+          \textbf{Lack of causal diagnosis:} inability to identify which
+          parameters explain observed discrepancies,
+        \item
+          \textbf{Limited robustness:} reduced performance under
+          unmodeled or rare conditions.
+        \end{itemize}
+
+        Hybridization addresses these gaps by introducing
+        \textbf{inductive models} that:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          identify the parameters responsible for deviations,
+        \item
+          infer updated parameter values based on observed data.
+        \end{itemize}
+      \item
+        Intended Deliverable Capability (IDC)\\
+        \emph{(Link to MC6: Services, MC12: DT constellation, MC10:
+        Models)}\\
+        Hybridization aims to provide the following capabilities within
+        the DT:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Parameter identification capability:}\\
+          Determine which model parameters must be updated to explain
+          discrepancies.
+        \item
+          \textbf{Parameter estimation capability:}\\
+          Infer corrected values or correction laws for the identified
+          parameters.
+        \item
+          \textbf{Adaptive simulation capability:}\\
+          Enable the simulation model to \textbf{continuously reflect
+          the behavior of the physical system} without direct
+          recalibration.
+        \end{itemize}
+
+        These capabilities enhance the DT by enabling \textbf{adaptive
+        and self-consistent behavior}, directly improving service
+        reliability (MC6) and model interaction within the DT
+        constellation (MC12).
+      \item
+        Conceptual Requirements\\
+        \emph{(Link to MC10: Data and models, MC13: Evolution, MC14:
+        Fidelity)}\\
+        To ensure the validity of hybridization, the following
+        requirements are defined:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Coverage of operating conditions:}\\
+          Training datasets must span a sufficiently wide range of
+          control configurations.
+        \item
+          \textbf{Consistency of dataset semantics:}\\
+          Datasets must be generated with fixed nominal parameters; any
+          change requires a new dataset version.
+        \item
+          \textbf{Parameter sampling adequacy:}\\
+          Each parameter must be sufficiently sampled to allow stable
+          inference.
+        \item
+          \textbf{Validation before deployment:}\\
+          Any parameter update must be validated before being applied;
+          otherwise, previous values must be retained.
+        \end{itemize}
+
+        These requirements ensure that hybridization:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          preserves \textbf{model validity and robustness (MC14)},
+        \item
+          supports controlled \textbf{DT evolution (MC13)}.
+        \end{itemize}
+      \item
+        Deliverable Requirements\\
+        \emph{(Link to MC11: Tooling, MC12: Constellation, MC17:
+        Operation)}\\
+        The outputs of hybridization namely the inductive models must
+        satisfy operational constraints:
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \textbf{Low latency:}\\
+          Predictions must be computed within time constraints
+          compatible with DT services.
+        \item
+          \textbf{Stability:}\\
+          Outputs must not disrupt existing simulation workflows.\\
+          These requirements ensure seamless integration of
+          hybridization into:
+        \item
+          the DT execution environment (MC11),
+        \item
+          the orchestration of services (MC12),
+        \item
+          real-time operation (MC17).
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\item
+  Result
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What becomes clearer when using Bentley + hybridization lens
+  \item
+    Examples of explicit decisions that were previously implicit:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      ??? why ML was used (e.g., compensate unknown friction losses)
+    \item
+      ??? how it was integrated (residual, surrogate, parameter
+      estimator)
+    \end{itemize}
+  \item
+    Evidence types:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      engineering traceability improvements
+    \item
+      stakeholder feedback (if you have it)
+    \item
+      reduced ambiguity in documentation
+    \item
+      easier onboarding of new team members (if applicable)
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Discussion \& Conclusion}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What your framework enables; next steps.
+  \end{itemize}
+\end{itemize}
+
+\end{document}

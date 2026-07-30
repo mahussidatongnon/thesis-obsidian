@@ -1,0 +1,26 @@
+Planning:
+- thesis started on jannuary
+- kickoff february
+	- thesis objectif
+		-  Research questions and hypotheses
+			- What scientific community define hybridization, how the use it in their engineering process
+			- Inspired by the functionnement of design pattern, is it possible and relevant to have such a pattern for the hybridization ?
+			- How to make the hybridization works systematic ?
+		- Scientific objectives
+			- propose a systematic descriptive framework for conception of hybridization, and to identify the corresponding pattern to appplied, or to describe the engineering conception
+			- purprose a tools or DSLs for assisting engineer in the hybridization process, for pattern for example
+	- thesis working uses cases
+		- les projets liés aux systèmes fluidiques (JNEM, JUNAP, etc ...),
+		- les projets liés à la mobilité,
+		- les projets liés aux machines de production.
+- Litterature review (by thematiques):
+	- Digital twins scientifique conceptual point of view (cited examples)
+	- Hybridization scientifiques point of view (cited examples)
+-  Working in progress
+	- Conceptual description  of hybridization in DT 
+		- motivation axes 
+		- realization
+	- Papper for Engineering Digital Twins journals.  Our objectif is to submmit an exemplar paper for describing the DT of the fuidic loop using a framework then focus on tbhe hybridization with our proposing for the description of hybridization that occuring. 
+- Next Step:
+	- Does Conceptual framework covers the hybridization concept available in studies uses cases (in other challenged it)
+	- ...

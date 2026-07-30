@@ -8,3 +8,32 @@
 		- Tank pressure "P_Tank" 
 		- ...
 	- some of them can lead to cavitation detection
+------------
+- Identifier les choix raison qui motivent l'hybridation
+	- now on cherche a identifier des caracteristique pour exprimer les choix ingenieux qui ont été fait pour la realization suivant un cadre 
+- 3 models
+	- 1D sim
+	- fault detection
+	- fault estimation
+- Services:
+	- virtual sensor (1D)
+	- cavitation detection (1D)
+	- detection de divergence (all models)
+		- identifier parameter
+			- creation:
+				- 1D utiliser pour génerer un dataset (suivant theta_nominal)
+				- fault detection entrainer pour identifier le parameter defetueux (laportion de tuyaux a l'origin de la perte de charge)
+				- ???
+					- quel est l'element qui a permit de choisir d'identiifer un parameter a la fois. Est-ce qu'une evolution vers de nouveau parametre est prevu
+					- est-ce la validation a éte fait sur les donnée de l'equipement physique aussi (simuler une perte de charge sur l'equipement physique)
+			- utilisation/operationel:
+				- la creation est condiontioner par les parametres nominaux. Si ces parametres nominaux change (apres une etape de mis-a-jour) est-ce que le modele courrant est toujour valide / capable d'identifier un defectueux dans les nouvelle conditions. 
+				- Si l'environnement (les vecteurs controles: pression du reservoir, ouverture de la vanne) changent, est-ce que le modele courrant est toujour valide / capable d'identifier un defectueux dans les nouvelle conditions. 
+		- estimate new parameter
+			- creation:
+				- une base de donnée est crer a partir du parametre identifier precédemment,  et du modele 1D. a chaque utilisation un nouveau modele.  est entrainner ?
+			- un seul paramètre est estimer aujourd'hui. Est-ce que tu prevoit d'estimer une combinaison de parametre
+		- validate le parametre:
+			- comment se fait la boucle de validation, sur quel jeu de donnée c'est effectué
+	- energy consumption (1D)
+- Qu'est-ce qui a motivé le choix 

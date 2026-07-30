@@ -1,0 +1,7 @@
+- Uncertainty
+	- kown as one metadata
+	- ? but each metadat can have some of uncertainty
+	- nature: epystemique, ontologique
+		- achelogue ontology
+- Propagation de l'incertitude:
+	- some libraries exists 

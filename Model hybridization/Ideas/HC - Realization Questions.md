@@ -1,0 +1,16 @@
+- The realization of hybridization different level of abstraction
+	- Intuition: CAPPELA - Arcadia, Need of different level of information to express
+	- Level 1: Understand model intecation and data flow. No explicit ordering 
+	- Level 2: Model execution ordering
+- Level 2
+	- During expressing realization, input and output of model, or hybrid model must have some metadata
+		- In case of JNEM, accuracy of output related to 
+			- Output
+				- divergence observed
+				- current threshold that create the divergence (vector)
+			- Input
+				- censor sensibility: may be not relevant
+	- 
+	- - https://polyfill.io/v3/polyfill.min.js?features=es6
+	- https://technologyinsights.dnv.com/creating-functional-mock-up-unit-fmu-models-from-machine-learning-models/#
+	- https://technologyinsights.dnv.com/creating-functional-mock-up-unit-fmu-models-from-machine-learning-models/

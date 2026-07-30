@@ -1,0 +1,18 @@
+- For next restitution
+	- add more illustration (existing vs dsl application) 
+	- for DSL:
+		- the biographie of the DSL
+		- describe the legends: rapidly
+	- For hybridization:
+		- show that it's from two sources of knowledge, two sources of avantages combined:
+			- data base
+			- physics based
+	- Guy is directeur Operationel of EDT (Inria)
+	- For hybridization charaxcteristics:
+		- One solution for presentation could be to confront the audiance to the same probleme I faced, then show that characteristics came as resdpond to undrestand mis-explained informations
+	- Advantages of those characteristics:
+		- knowledge sharing
+		- reveiw process: throught motivation axes we can choose differents implementation ways
+	- Nest steps:
+		- for mid-term and long-therm propose a way/approch for abording the targets
+			- ONNX (for code generation) ?

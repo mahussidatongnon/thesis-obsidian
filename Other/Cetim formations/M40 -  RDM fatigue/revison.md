@@ -1,0 +1,3 @@
+- cylindre soumis à un effort de traction: https://www.memosciences.fr/supplement/mecanique/traction/traction.htm
+- un cylindre soumis à un moment de flexion: https://fr.wikipedia.org/wiki/Flexion_(mat%C3%A9riau)
+- cylindre soumis à un moment de torsion: https://fr.wikipedia.org/wiki/Torsion

@@ -1,0 +1,1 @@
+- intall dependencies like: npm install --legacy-peer-deps.

@@ -9,9 +9,9 @@
 	- What scientific community define hybridization, how the use it in their engineering process
 	- Inspired by the functionnement of design pattern, is it possible and relevant to have such a pattern for the hybridization ?
 	- How to make the hybridization works systematic ?
-- Scientific objectives
-	- propose a systematic descriptive framework for conception of hybridization, and to identfy the corresponding pattern to appplied
-	- proprose a tools or DSLs for assisting engineer in the hybridization process, for pattern for example
+- Potential expected result
+	- propose a systematic descriptive framework for conception of hybridization, and to identify the corresponding pattern to appplied, or to describe the engineering conception
+	- purprose a tools or DSLs for assisting engineer in the hybridization process, for pattern for example
 
 # Ongoing work
 
@@ -31,26 +31,23 @@
 	- Combining Machine Learning and Simulation  to a Hybrid Modelling Approach:  Current and Future Directions:
 		- inductive and deductive models level of combinaion.  First expose some main part of each model and show that each model can be combine with the other at different level exposed and the result is different 
 
-- Definition of use cases
-	- JNEM 
-	- JUNAP
-
-- Preliminary Results
+- Timelines & main results (see restitution format)
+	Including: 
 	- Hybridization Characteristics (two dimensions identiifed)
 		- Motivation: express why hybridizationn is done
 		- Realisatiomn: express how this hybrididization is implemented
 	- Examplar paper ongoing - application of hybridization characteristics
 
 # Training hours (47 hours):
-	- Scientifics (45 hours)
-		- Introduction à l’éthique et intégrité scientifique (3 hours)
-		- Master Class Science Ouverte (6 hours)
-		- Minor Quantum engineering (21) hours)
-		- SS01 : PSC1 Initial (7 hours)
-		- Worksops: MOMI (8 hours)
+- Scientifics (49 hours)
+	- Introduction à l’éthique et intégrité scientifique (3 hours)
+	- Master Class Science Ouverte (6 hours)
+	- Minor Quantum engineering (24) hours)
+	- SS01 : PSC1 Initial (7 hours)
+	- Worksops: MOMI (9 hours)
 
-	- Professionals (2 hours)
-		- virtuous tryptic towards reproducibility (2 hours)
+- Professionals (2 hours)
+	- virtuous tryptic towards reproducibility (2 hours)
 
 # Next steps  
 - Short term goal
