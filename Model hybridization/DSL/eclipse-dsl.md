@@ -9,3 +9,4 @@
 		- Onnx API ref
 	- Descartes bulder: creation de model
 		- application au models inductives 
+		

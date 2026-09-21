@@ -1,0 +1,23 @@
+- DataFlow (QUELS DONNES DISPONIBLE POUR QUEL NOEUD: LA DEPENDANCE)
+	 Grqphe describe data movememt, consumed, transformed throught architecture 
+	- input
+	- outputs
+	- nodes (noeuds):
+		- models, operators
+	- connection
+- ControlFlow (SI LE NOEUD EST ELLIGIBLE, EST-CE QUE JE L'EXECUTE)
+	- PAR DEFAUT ELIGIBLE == EXECUTION IMMEDIATE
+	- LE DECISION_TAKER AJOUTE UNE CONDITION SUPLLEMENTAIRE AUX NOEUD IMMEDIATS DES DESCENDANTS
+	- LE MUTIPLEXEUR CREE AUTANT UN NOEUD TERMINAL INDEPENDANT A CHAQUE ASCENDANT IMMEDIAT
+	- NOTE
+		- Decisiontaker peut etrs un exclusive gateway: bpmn: 
+	- instead getting down in the graph like FDF decide what fork should be next, which path  
+	- base on a data decide
+		- what action should be the next 
+	- In onother word, its controlling the execution step inside the graphe, then the executed graphe depend on it
+		-la disponibilitee des donnees de a un noeud, rend le noeud eligible a un controleflow
+- State
+	- what do orchestration keep through the execution
+		- ex: iteration = 3 for loop
+- Time/Event
+	- when is the orchestration executed

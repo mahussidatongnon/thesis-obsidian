@@ -4,6 +4,14 @@ kanban-plugin: board
 
 ---
 
+## Trash
+
+- [ ] mhy files should deliver an intermediate files witch let iser user to override the kind of implementation it wants. For example if the node input must come from api rest,:
+				- the fisrt intermediate generation must be independant of origin.
+				- the second must depend on origin and implement the first one
+				- Note really clear yet
+
+
 ## Transversal
 
 - [ ] Communication interface between data and models
@@ -20,12 +28,11 @@ kanban-plugin: board
 
 - [ ] watch Julien videos
 - [ ] Model Characteritics (that is usefull for hybridization process). Inspiration can come from the DT CHaracteristics
+- [ ] Tester Descrates Builder
 
 
 ## ToDo
 
-- [ ] Send Hybridization caracteristics to Julien
-- [ ] Send DT Characteristics to Julien
 
 
 ## In Progress
@@ -38,12 +45,14 @@ kanban-plugin: board
 
 ## Done
 
+- [ ] Send DT Characteristics to Julien
+- [ ] Send Hybridization caracteristics to Julien
 
 
 
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false,false]}
 ```
 %%

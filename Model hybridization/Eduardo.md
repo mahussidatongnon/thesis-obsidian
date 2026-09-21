@@ -1,0 +1,5 @@
+- https://eclipse.dev/emfatic/
+- [https://ieeexplore.ieee.org/abstract/document/1458143/?casa_token=1lo3SyEp_JIAAAAA:IDswPpzgJvxLqNP5iQzuZf437dBvKCtruPYDZw3b302Ys4BFFMsHApeURUy1CZuq-tgGrX2CZA](https://ieeexplore.ieee.org/abstract/document/1458143/?casa_token=1lo3SyEp_JIAAAAA:IDswPpzgJvxLqNP5iQzuZf437dBvKCtruPYDZw3b302Ys4BFFMsHApeURUy1CZuq-tgGrX2CZA)
+- [https://arxiv.org/pdf/2608.18480](https://arxiv.org/pdf/2608.18480)
+- +65 9429 4759
+- 

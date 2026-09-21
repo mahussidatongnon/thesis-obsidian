@@ -1,0 +1,1 @@
+[https://services.acm.org/rightsManagement/erights.cfm?v=01000807044D00040549525D424D414759585042484D485043](https://services.acm.org/rightsManagement/erights.cfm?v=01000807044D00040549525D424D414759585042484D485043)

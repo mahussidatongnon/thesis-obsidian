@@ -1,3 +1,7 @@
+- Usefull
+	- The hybrid aspect of the model can be hide depending the point of view
+		- during the usage/runtime it ca be hide
+		- 
 - Motivation (see excel)
 - Realization
 	Following data must be available

@@ -1,0 +1,16 @@
+- Usefull
+	- The hybrid aspect of the model can be hide depending the point of view
+		- during the usage/runtime it ca be hide
+		- The validity is like a kid of concept
+		- Opertor can understand what happend in validity frame of each models involved
+			- ex: avg can mean the intersection of validity frame
+			- if some operator can't automatically build the validity frame, the model designer can then provide it
+				- and the operator can check it
+				- TO BE VALIDATED
+			- Other information can be set in the frame:
+				- for what it has been made for 
+	- JNEM
+		- residual like if some component
+			- fatigue, lifecycle
+- Note:
+	- Design Of Experiment
