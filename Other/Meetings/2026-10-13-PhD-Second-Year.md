@@ -1,0 +1,13 @@
+- TODO
+	- plan Phd Defense
+		- defense must be coherent and scientific contribution must be clear
+		- differenciate what is essentail and nice to have
+		- of course all aspect of the thesis can't be fully covered, but the argument must be clear enough and open a new idea research
+	- In parallele with the manuscrit writing 
+		- what skills are acquired , and can be use in CV of a future jobs
+	- Building identity as researcher
+		- research
+		- visibility
+		- ex: start writing about elements in the domains
+			- I must identify my approaches
+		- network
